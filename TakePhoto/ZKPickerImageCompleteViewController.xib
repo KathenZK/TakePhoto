@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZKPickerImageCompleteViewController">
+            <connections>
+                <outlet property="imageView" destination="oUd-Ri-sYk" id="CKn-Fn-TyJ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oUd-Ri-sYk">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="oUd-Ri-sYk" secondAttribute="height" multiplier="1:1" id="Nc8-YO-KCx"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mc-bs-ETi">
+                    <rect key="frame" x="15" y="611" width="40" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="重拍">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="repickerImage:" destination="-1" eventType="touchUpInside" id="l2a-Q2-1sH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dE2-Dk-ezT">
+                    <rect key="frame" x="280" y="611" width="80" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="使用照片">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="userPhoto:" destination="-1" eventType="touchUpInside" id="HAi-s4-B0v"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="dE2-Dk-ezT" secondAttribute="bottom" constant="20" id="82c-MS-tVa"/>
+                <constraint firstItem="oUd-Ri-sYk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AnC-3p-AoF"/>
+                <constraint firstAttribute="bottom" secondItem="2mc-bs-ETi" secondAttribute="bottom" constant="20" id="RR4-0y-3Te"/>
+                <constraint firstAttribute="trailing" secondItem="dE2-Dk-ezT" secondAttribute="trailing" constant="15" id="WYn-Ds-YqD"/>
+                <constraint firstAttribute="trailing" secondItem="oUd-Ri-sYk" secondAttribute="trailing" id="fc7-cD-dXg"/>
+                <constraint firstItem="oUd-Ri-sYk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wgz-kA-MRa"/>
+                <constraint firstItem="2mc-bs-ETi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="zNT-OW-vyX"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="450" y="374"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8Ej-fS-RtM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Image Picker View Controller-->
+        <scene sceneID="9uQ-NC-Tqh">
+            <objects>
+                <viewController id="nTO-uZ-4mK" customClass="ZKImagePickerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="waW-4Y-VPu"/>
+                        <viewControllerLayoutGuide type="bottom" id="ed7-Uh-nFB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QrS-N7-WTV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wsY-3D-AQ8">
+                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wsY-3D-AQ8" secondAttribute="height" multiplier="1:1" id="nvr-pM-iOk"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ahq-TX-6If" appends="YES" id="yvV-f5-n4Z"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9Z-6U-Aws">
+                                <rect key="frame" x="156" y="553" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="1Ke-W2-DP8"/>
+                                    <constraint firstAttribute="width" secondItem="J9Z-6U-Aws" secondAttribute="height" multiplier="1:1" id="VCH-xB-vm8"/>
+                                </constraints>
+                                <state key="normal" image="take_photo"/>
+                                <state key="highlighted" image="take_photo_selected"/>
+                                <connections>
+                                    <action selector="snapStillImage:" destination="nTO-uZ-4mK" eventType="touchUpInside" id="BcJ-Ym-00Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FbS-74-g4y">
+                                <rect key="frame" x="15" y="567" width="40" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="取消">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FbS-74-g4y" firstAttribute="centerY" secondItem="J9Z-6U-Aws" secondAttribute="centerY" id="3wl-X8-IjQ"/>
+                            <constraint firstItem="FbS-74-g4y" firstAttribute="leading" secondItem="QrS-N7-WTV" secondAttribute="leading" constant="15" id="D2T-PQ-bwN"/>
+                            <constraint firstItem="ed7-Uh-nFB" firstAttribute="top" secondItem="J9Z-6U-Aws" secondAttribute="bottom" constant="50" id="MfD-0G-r3l"/>
+                            <constraint firstItem="J9Z-6U-Aws" firstAttribute="centerX" secondItem="QrS-N7-WTV" secondAttribute="centerX" id="Q3g-ab-YJH"/>
+                            <constraint firstItem="wsY-3D-AQ8" firstAttribute="leading" secondItem="QrS-N7-WTV" secondAttribute="leading" id="S6k-CR-FhP"/>
+                            <constraint firstAttribute="trailing" secondItem="wsY-3D-AQ8" secondAttribute="trailing" id="YIe-hP-VXS"/>
+                            <constraint firstItem="wsY-3D-AQ8" firstAttribute="top" secondItem="waW-4Y-VPu" secondAttribute="bottom" id="ueF-P7-XoH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gko-bL-UmI"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="previewView" destination="wsY-3D-AQ8" id="yzs-Zs-6RN"/>
+                        <outlet property="stillButton" destination="J9Z-6U-Aws" id="q21-aE-ELV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fQb-N5-NBQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ahq-TX-6If">
+                    <connections>
+                        <action selector="focusAndExposeTap:" destination="nTO-uZ-4mK" id="KXE-P7-Jr2"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="898.5" y="364.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fxn-cw-sEU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Ej-fS-RtM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ake-cw-vhf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nTO-uZ-4mK" kind="relationship" relationship="rootViewController" id="pcf-qT-klM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QX9-dE-puA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="202" y="365"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="take_photo" width="125" height="125"/>
+        <image name="take_photo_selected" width="125" height="125"/>
+    </resources>
+</document>
